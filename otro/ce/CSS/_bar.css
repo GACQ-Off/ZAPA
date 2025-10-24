@@ -1,0 +1,97 @@
+header,
+#contenedor_bar,
+#cabeza_bar,
+#cuerpo_bar,
+#cola_bar  {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+#contenedor_bar,
+#cabeza_bar,
+#cuerpo_bar,
+#cola_bar {
+    flex-direction: row;
+}
+
+#contenedor_bar {
+    width: 100%;
+    max-height: 20%;
+    background-color: #F5E6CF;
+    border-bottom: 0.15rem solid #080706;
+    justify-content: space-around;
+}
+
+#cabeza_bar,
+#cuerpo_bar,
+#cola_bar {
+    height: 100%;
+    gap: 1.5rem;
+    margin: auto;
+}
+
+#cuerpo_bar {
+    padding: 1.5rem;
+}
+
+#cabeza_bar,
+#cola_bar {
+    padding: .5rem;
+}
+
+#contenedor_bar img {
+    cursor: pointer;
+}
+
+#cola_bar,
+#cuerpo_bar a {
+    text-decoration: none;
+}
+
+#cola_bar p,
+#cuerpo_bar a {
+    transition: 0.1s;
+    font-weight: bold;
+    vertical-align: middle;
+}
+
+#cola_bar:hover p,
+#cuerpo_bar a:hover {
+    color: #CF5758;
+    transition: 0.1s;
+}
+
+#cola_bar:active p,
+#cuerpo_bar a:active {
+    color: #F5565C;
+    transition: 0.1s;
+}
+
+#Logo {
+    border: 0.15rem solid #080706;
+}
+
+#cola_bar p  {
+    margin: auto 0;
+}
+
+#cola_bar img {
+    padding: 0.15rem;
+    border: 0.15rem solid #080706;
+    border-radius: 50%;
+    transition: 0.1s;
+}
+
+#cola_bar:hover > img {
+    border: 0.15rem solid #CF5758;
+    transition: 0.1s;
+}
+
+#cola_bar:active > img {
+    border: 0.15rem solid #F5565C;
+    transition: 0.1s;
+}
+
+#cuerpo_bar #acento_bar {
+    color: #F5565C;
+}

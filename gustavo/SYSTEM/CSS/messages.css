@@ -1,0 +1,53 @@
+#mensaje_error {
+    z-index: 1000;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    width: fit-content;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 1rem;
+    border-radius: 0.75rem;
+    color: #ffffff;
+    position: fixed;
+    border: white 0.1rem solid;
+    top: 32rem;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.15s ease-out, visibility 0.15s ease-out;
+    background-color: rgb(173, 32, 60);
+}
+
+#mensaje_error.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+#mensaje_exito {
+    z-index: 1000;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    width: fit-content;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 1rem;
+    border-radius: 0.75rem;
+    color: #ffffff;
+    position: fixed;
+    border: white 0.1rem solid;
+    top: 32rem;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.15s ease-out, visibility 0.15s ease-out;
+    background-color: rgb(27, 155, 36);
+}
+
+#mensaje_exito.visible {
+    opacity: 1;
+    visibility: visible;
+}

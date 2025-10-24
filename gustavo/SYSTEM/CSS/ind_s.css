@@ -1,0 +1,169 @@
+#f_contenedor_uno,
+#f_contenedor_dos,
+#f_contenedor_dos div,
+#f_contenedor_tres div {
+    display: flex;
+}
+
+#f_contenedor_uno,
+#f_contenedor_tres,
+#f_contenedor_dos,
+#f_contenedor_dos div,
+#f_contenedor_tres div {
+    flex-direction: column;
+}
+
+#f_contenedor_dos div,
+#f_contenedor_tres div {
+    width: 100%;
+    display: flex;
+    gap: .2rem;
+    height: fit-content;
+}
+
+#f_contenedor_uno {
+    height: 22rem;
+}
+
+#f_contenedor_dos {
+    width: 100%;
+    padding: 1rem;
+    height: fit-content;
+    gap: 1.5rem;
+    padding: 1rem;
+    padding-right: 2rem;
+}
+
+#f_contenedor_tres {
+    width: 100%;
+    height: fit-content;
+    gap: 1.5rem;
+}
+
+#f_contenedor_uno {
+    width: 100%;
+    padding: 1rem;
+}
+
+input,
+select,
+textarea {
+    margin-left: 0.75rem;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    height: fit-content;
+    border: transparent 0.15rem;
+    border-bottom: rgb(91, 91, 91) 0.15rem solid;
+    background-color: rgb(221, 221, 221);
+    color: #000;
+    transition: 0.3s;
+    padding-left: .5rem;
+    line-height: 1.5rem; 
+}
+
+input:hover,
+select:hover,
+textarea:hover {
+    border-bottom-color: #000;
+    transition: 0.3s;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-bottom-color: rgb(58, 128, 121);
+    transition: 0.3s;
+    outline: none;
+}
+
+#resu_formulario {
+    width: 100%;
+    margin: 0 0 0 0.5rem; 
+}
+
+#te_formulario {
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    height: 7.25rem;
+    margin: 0 0 0 0.5rem;
+    font-size: 16px;
+}
+
+#re_formulario {
+    width: 20rem;
+    margin: 0 0 0 0.5rem; 
+}
+
+#cuerpo_formulario {
+    gap: 0.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+#f_contenedor_uno #contenedor_de_tabla {
+    max-height: 350px;
+    overflow-y: auto;
+    border-radius: 1.25rem;
+    overflow-x: hidden;
+    border: #9c9a9a 0.1rem solid;
+    position: relative;
+}
+
+#f_contenedor_uno #contenedor_de_tabla table thead tr th {
+    background-image: linear-gradient(rgb(58, 128, 121), rgb(42, 96, 90), rgb(32, 70, 66));
+    color: #ddd;
+}
+
+fieldset {
+    border: #9c9a9a 0.15rem solid;
+    border-radius: 0.5rem;
+}
+
+#cuerpo_formulario .formulario_parte {
+    display: none;
+    transition: 0.3s ease;
+}
+
+#cuerpo_formulario .formulario_parte.mostrar {
+    display: flex;    
+    transition: 0.3s ease;
+}
+
+#bottom_modal {
+    display: none;
+    transition: 0.3s ease;
+}
+
+#bottom_modal.mostrar {
+    display: flex;
+    transition: 0.3s ease;
+}
+
+#primer_modal__contenedor,
+#modal_area_dinamica {
+    width: 45rem;
+}
+
+.imagen_contenedor_uno {
+    margin: 0 auto;
+    display: flex;
+    border-radius: .2rem;
+    background-color: rgb(221, 221, 221);
+    justify-content: center;
+    overflow: hidden;
+    align-content: center;
+    border: 0.15rem rgb(170, 169, 169) solid;
+    min-width: 6rem;
+    min-height: 8rem;
+    max-width: 28rem;
+    max-height: 28rem;
+}
+
+#imagen_previa,
+#imagen_previa_m {
+    display: flex;
+    margin: auto;
+    max-width: 100%;
+    max-height: 100%;
+}

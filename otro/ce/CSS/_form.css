@@ -1,0 +1,132 @@
+#formulario,
+#formulario div,
+#formulario #formulario_cuerpo,
+#formulario #formulario_cuerpo div,
+#formulario_bottom {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+#formulario #formulario_cuerpo div,
+#formulario {
+    flex-direction: column;
+    width: 100%;
+}
+
+#formulario #formulario_cuerpo,
+#formulario_bottom {
+    flex-direction: row;
+}
+
+#formulario #formulario_cuerpo {
+    width: fit-content;
+    gap: 2rem; 
+}
+
+#formulario h4 {
+    font-weight: bold;
+    font-size: 22px;
+    text-align: center;
+}
+
+#formulario h5 {
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+}
+
+#formulario {
+    background-color: #F5E6CF;
+    border: #080706 solid 0.15rem;
+    padding: 1.5rem;
+    gap: 1rem;
+    width: fit-content;
+    margin: auto;
+    height: fit-content;
+}
+
+#formulario_cuerpo {
+    justify-content: space-around;
+    padding: .5rem;
+}
+
+#formulario_cuerpo div {
+    align-items: center;
+    gap: .75rem;
+    width: fit-content;
+}
+
+#formulario_cuerpo div label {
+    font-weight: bold;
+    text-align: left;
+    font-size: 20px;
+    width: 100%;
+}
+
+#formulario_cuerpo div input {
+    background-color: #F9F5EA;
+    width: 25rem;
+    padding-left: .5rem;
+    border: 0.15rem solid #080706;
+    height: 3rem;
+    outline: none;
+}
+
+#formulario_bottom {
+    gap: 3rem;
+    justify-content: center;
+    width: 100%;
+}
+
+#formulario_bottom button {
+    background-color: #F9F5EA;
+    border: 0.15rem solid #080706;
+    padding: 1rem;
+    color: #080706;
+    font-size: 16px;
+    color: #F9F5EA;
+    vertical-align: middle;
+    transition: 0.1s;
+    font-weight: bolder;
+}
+
+#formulario_bottom #atras_ a:hover,
+#formulario_bottom button:hover {
+    color: #ffffff;
+    transition: 0.1s;
+}
+
+#formulario_bottom #atras_ a:active,
+#formulario_bottom button:active {
+    color: #080706;
+    transition: 0.1s;
+}
+
+#formulario_bottom button[type='reset'] {
+    background-color: #F5565C;
+}
+
+#formulario_bottom button[type='submit'] {
+    background-color: #169C64;
+}
+
+#formulario_cuerpo div #Descripcion {
+    height: 5rem;
+    padding: .5rem;
+    background-color: #F9F5EA;
+    width: 25rem;
+    border: 0.15rem solid #080706;
+    outline: none;
+    font-size: 16px;
+    resize: none;
+}
+
+#formulario_bottom #atras_ {
+    background-color: #3C5777;
+}
+
+#formulario_bottom #atras_ a {
+    color: #F9F5EA;
+    text-decoration: none;
+    transition: 0.1s;
+}

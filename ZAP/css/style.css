@@ -1,0 +1,304 @@
+/* Variables CSS personalizadas */
+:root {
+    --primary-color: #3c8dbc; /* Azul principal de AdminLTE, que es el azul del logo */
+    --primary-hover-color: #367fa9;
+    --accent-color: #f7a400; /* Un color de acento, quizás un naranja o dorado para contraste */
+    --background-color: #f0f2f5;
+    --card-background: rgba(255, 255, 255, 0.95); /* Ligeramente transparente para ver el fondo */
+    --border-color: #d2d6de;
+    --text-color: #333;
+    --heading-color: #222;
+    --shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.2); /* Sombra un poco más fuerte */
+    --border-radius: 12px;
+    --font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* Reset y centrado base */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Base Body Styles */
+
+body {
+    margin: 0;
+    padding: 0;
+    padding-top: 48px; /* O el valor que necesite para empujarlo hacia abajo */
+    /* ... el resto de sus propiedades ... */
+    font-family: var(--font-family);
+    background-color: var(--background-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+    position: relative;
+    color: var(--text-color);
+}
+
+/* Background Image Container */
+/* ESTA ES LA SECCIÓN CLAVE A MODIFICAR */
+/* Background Image Container */
+.background-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../2.jpg'); /* Asegúrese que la ruta sea correcta */
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.8) grayscale(0.2); /* Oscurece y desatura un poco el fondo */
+    z-index: -1; /* Envía el fondo detrás del contenido */
+}
+
+
+/* --- DISEÑO DE DOS COLUMNAS --- */
+.main-layout {
+    display: flex;
+    width: 90%;
+    max-width: 800px;
+    height: 80vh; /* Aumentamos ligeramente la altura para más espacio */
+    max-height: 650px; /* Ajustado */
+    background-color: rgba(255, 255, 255, 0.98);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+
+.left-panel {
+    flex:0.80;
+    display: flex;
+    flex-direction: column; /* Permite apilar el logo y el posible eslogan */
+    justify-content: center;
+    align-items: center;
+    background: var(white); /* Color sólido azul, como tu logo */
+    /* background: linear-gradient(to bottom right, var(--primary-color), #2a6f9c); /* Puedes usar un degradado si prefieres */ */
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+    border-right: 5px solid var(--primary-hover-color); /* Un borde sutil que combine */
+}
+
+.large-logo {
+    max-width: 90%; /* Hace el logo más grande dentro del panel */
+    max-height: 90%;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 0 15px rgba(0,0,0,0.4)); /* Sombra más pronunciada para que destaque */
+    /* Si el logo original tiene fondo azul, solo asegúrate de que el panel también lo tenga */
+
+}
+
+/* Slogan opcional en el panel izquierdo (si lo usas en el HTML) */
+/*
+.left-panel-slogan {
+    margin-top: 1.5rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.6em;
+    font-weight: 600;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+    text-align: center;
+}
+*/
+
+.right-panel {
+    flex: 0.90; /* Damos un poco más de espacio al formulario */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem; /* Un poco más de padding interno */
+    box-sizing: border-box;
+    background-color: var(--card-background); /* Usa el color de fondo con transparencia */
+}
+
+
+
+/* Login Header */
+.login-header {
+    margin-bottom: 2rem;
+}
+
+.header-content {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 15px;
+}
+
+.main-title {
+    font-size: 2.2em;
+    color: var(--heading-color);
+    font-weight: 600;
+    margin: 0;
+    line-height: 0;
+    white-space: nowrap;
+    margin-top: 22px; /* Adjust this value to move it down */
+}
+
+.main-title b {
+    color: var(--primary-color);
+    margin-right: 0.3em;
+}
+
+.header-logo {
+    max-width: 60px;
+    height: auto;
+    /* Añadir un ligero borde o sombra si es un logo transparente y se ve mejor */
+    /* border: 1px solid rgba(0,0,0,0.1); */
+    /* border-radius: 5px; */
+}
+
+/* Login Body (Form area) */
+.login-body .login-msg {
+    font-size: 1.6em;
+    color: #666;
+    margin-bottom: 1.8rem;
+    text-align: left;
+}
+
+/* Form Group (sin cambios, ya están bien) */
+.form-group {
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.6rem;
+    color: var(--text-color);
+    font-size: 2rem; /* Puedes ajustar este valor */;
+}
+
+/* Input with Icon Group (sin cambios) */
+.input-icon-group {
+    position: relative;
+}
+
+.form-control {
+    width: 100%;
+    padding: 0.75rem 1rem 0.75rem 2.8rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    font-size: 2rem;
+    line-height: 1.5;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-control::placeholder {
+    color: #999;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(60, 141, 188, 0.2);
+}
+
+.input-icon-group .icon {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999;
+    font-size: 1.1em;
+}
+
+/* Form Actions (Button) */
+.form-actions {
+    margin-top: 2rem;
+}
+
+.btn {
+    display: inline-block;
+    width: 100%;
+    padding: 0.9rem 1.5rem;
+    font-size: 1.2em;
+    font-weight: 600;
+    line-height: 1.5;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: var(--border-radius);
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover-color);
+    border-color: var(--primary-hover-color);
+}
+
+/* Media Queries para responsividad */
+@media (max-width: 850px) {
+    .main-layout {
+        flex-direction: column;
+        height: auto;
+        max-height: 100%;
+        width: 95%;
+    }
+
+    .left-panel {
+        height: 180px; /* Aumentado para el logo */
+        flex: none;
+        border-bottom-left-radius: 0;
+        border-top-right-radius: var(--border-radius);
+        border-bottom: 5px solid var(--primary-hover-color); /* Borde inferior para separar */
+        border-right: none; /* Quitamos el borde derecho */
+    }
+
+    .large-logo {
+        max-width: 60%; /* Ajustado para pantallas más pequeñas */
+    }
+
+    .right-panel {
+        padding: 1.5rem;
+    }
+
+    .login-container {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-layout {
+        height: auto;
+    }
+    .left-panel {
+        height: 150px;
+    }
+    .large-logo {
+        max-width: 70%; /* Ajustado para pantallas aún más pequeñas */
+    }
+    .login-container {
+        padding: 0;
+    }
+    .main-title {
+        font-size: 1.8em;
+    }
+    .header-logo {
+        max-width: 50px;
+    }
+    .form-control {
+        padding: 0.65rem 1rem 0.65rem 2.5rem;
+        font-size: 0.95rem;
+    }
+    .input-icon-group .icon {
+        left: 0.8rem;
+        font-size: 1em;
+    }
+    .btn {
+        padding: 0.8rem 1.2rem;
+        font-size: 1em;
+    }
+}

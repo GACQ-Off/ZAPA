@@ -1,0 +1,231 @@
+
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #080706;
+}
+
+html {
+    font-size: 16px;
+}
+
+body,
+main,
+header,
+#contenedor_principal,
+#cabeza_principal,
+#uno_cabeza,
+#dos_cabeza,
+#busqueda_input,
+#dos_cuerpo,
+#uno_cuerpo,
+#uno_cuerpo ul,
+#cuatro_cuerpo,
+#cuerpo_principal,
+#cuatro_cuerpo  {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+body {
+    background-color: #F9F5EA;
+    min-height: 100vh;
+}
+
+body,
+#contenedor_principal,
+#cabeza_principal,
+#uno_cabeza,
+#cuatro_cuerpo,
+#cuerpo_principal,
+#cuatro_cuerpo {
+    flex-direction: column;
+    width: 100%;
+}
+
+#busqueda_input,
+#dos_cabeza,
+#dos_cuerpo,
+#uno_cuerpo,
+#uno_cuerpo ul {
+    flex-direction: row;
+}
+
+.icono {
+    width: 2rem;
+    height: 2rem;
+    margin: auto;
+}
+
+main {
+    padding: 3rem 4.5rem;
+    height: 100%;
+    gap: 2.5rem;
+}
+
+#cabeza_principal {
+    gap: 1.5rem;
+    height: fit-content;
+}
+
+#uno_cabeza {
+    padding: 0 16.5rem;
+    gap: 1.5rem;
+}
+
+#uno_cabeza h4 {
+    color: #080706;
+    font-weight: bold;
+    font-size: 38px;
+    text-align: center;
+    user-select: none;
+}
+
+#uno_cabeza h6 {
+    color: #080706;
+    font-weight: lighter;
+    font-size: 16px;
+    text-align: center;
+    line-height: 1.25rem;
+    user-select: none;
+}
+
+#dos_cabeza {
+    padding: 0 10rem;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+#dos_cabeza #busqueda_input {
+    background-color: #F9F5EA;
+    width: 30rem;
+    padding-left: .5rem;
+}
+
+#dos_cabeza #busqueda_boton {
+    background-color: #F5565C;
+    width: 6rem;
+    color: #F9F5EA;
+    font-weight: bold;
+    transition: 0.1s;
+    cursor: pointer;
+}
+
+#dos_cabeza #busqueda_boton:hover {
+    color: #ffffff;
+    transition: 0.1s;
+}
+
+#dos_cabeza #busqueda_boton:active {
+    color: #080706;
+    transition: 0.1s;
+}
+
+#dos_cabeza #busqueda_input,
+#dos_cabeza #busqueda_boton {
+    border: 0.15rem solid #080706;
+    height: 3rem;
+}
+
+#dos_cabeza #busqueda_input input {
+    background-color: transparent;
+    border: transparent solid;
+    height: 100%;
+    width: 100%;
+    padding-left: .5rem;
+    outline: none;
+}
+
+#cuerpo_principal {
+    gap: 1.5rem;
+}
+
+#uno_cuerpo {
+    justify-content: space-around;
+}
+
+#dos_cuerpo {
+    gap: 1rem;
+}
+
+#dos_cuerpo h5 {
+    color: #080706;
+    font-weight: bold;
+    font-size: 24px;
+    user-select: none;
+    vertical-align: middle;
+    padding-top: 0.2rem;
+}
+
+#dos_cuerpo h5 text {
+    color: #080706;
+    font-weight: normal;
+    font-size: 16px;
+    user-select: none;
+    border: #080706 solid 0.15rem;
+    padding: .5rem 1rem;
+    background-color: #F5E6CF;
+    vertical-align: middle;
+}
+
+#dos_cuerpo button {
+    border: #080706 solid 0.15rem;
+    padding: .5rem 1rem;
+    background-color: #F5565C;
+    cursor: pointer;
+}
+
+#dos_cuerpo button a {
+    vertical-align: middle;
+    color: #F9F5EA;
+    font-weight: bold;
+    transition: 0.1s;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+#dos_cuerpo button a:hover {
+    color: #ffffff;
+    transition: 0.1s;
+}
+
+#dos_cuerpo button a:active {
+    color: #080706;
+    transition: 0.1s;
+}
+
+#uno_cuerpo ul {
+    list-style: none;
+    gap: 1rem;
+}
+
+#uno_cuerpo ul li {
+    padding: .5rem;
+    background-color: #F5E6CF;
+    border: #080706 solid 0.15rem;
+    cursor: pointer;
+    transition: 0.1s;
+}
+
+#uno_cuerpo ul li a {
+    font-weight: bold;
+    text-decoration: none;
+}
+
+#uno_cuerpo ul li:hover {
+    transition: 0.1s;
+    background-color: #d8b786;
+}
+
+#uno_cuerpo ul li:active {
+    background-color: #F9F5EA;
+    transition: 0.1s;
+}
+
+#cuatro_cuerpo {
+    padding: 0 2rem;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}

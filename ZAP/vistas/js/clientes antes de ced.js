@@ -1,0 +1,60 @@
+/*=============================================
+EDITAR CLIENTE
+=============================================*/
+$(".tablas").on("click", ".btnEditarCliente", function(){
+  var idCliente = $(this).attr("idCliente");
+
+  var datos = new FormData();
+  datos.append("idCliente", idCliente);
+
+  $.ajax({
+    url: "ajax/clientes.ajax.php",
+    method: "POST",
+    data: datos,
+    cache: false,
+    contentType: false,
+    processData: false,
+    dataType: "json",
+    success: function(respuesta) {
+
+      $("#cedula").val(respuesta["cedula"]);
+      $("#nombre").val(respuesta["nombre"]);
+      $("#apellido").val(respuesta["apellido"]);
+      $("#email").val(respuesta["email"]);
+      $("#direccion").val(respuesta["direccion"]);
+
+      // Rellenar prefijo y número de teléfono por separado
+      $("#editarPrefijoTelefono").val(respuesta["prefijo_telefono"]);
+      $("#editarRestoTelefono").val(respuesta["numero_telefono"]);
+
+      // Rellenar el campo oculto combinado (opcional, si lo usas en el formulario)
+      $("#hiddenEditarTelefono").val(respuesta["prefijo_telefono"] + "-" + respuesta["numero_telefono"]);
+    }
+  });
+});
+
+/*=============================================
+ELIMINAR CLIENTE
+=============================================*/
+$(".tablas").on("click", ".btnEliminarUsuario", function(){
+
+	var idCliente = $(this).attr("idCliente");
+	
+	swal({
+        title: '¿Está seguro de borrar el cliente?',
+        text: "¡Si no lo está puede cancelar la acción!",
+        type: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        cancelButtonText: 'Cancelar',
+        confirmButtonText: 'Si, borrar cliente!'
+      }).then(function(result){
+        if (result.value) {
+          
+            window.location = "index.php?ruta=clientes&idCliente="+idCliente;
+        }
+
+  })
+
+})

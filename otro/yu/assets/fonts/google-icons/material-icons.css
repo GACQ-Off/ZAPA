@@ -1,0 +1,44 @@
+/* ================================================== */
+/* === PASO 2: Definir cómo cargar la fuente local === */
+/* ================================================== */
+
+/* Esta regla le dice al navegador:
+   "Existe una fuente llamada 'Material Icons'.
+   Búscala en el archivo 'MaterialIcons-Regular.woff2'
+   que está en la MISMA carpeta que este archivo CSS." */
+   @font-face {
+    font-family: 'Material Icons'; /* Nombre que le damos a la fuente */
+    font-style: normal;
+    font-weight: 400;
+    /* Ruta al archivo de fuente, relativa a ESTE archivo CSS */
+    src: url(MaterialIcons-Regular.woff2) format('woff2');
+  }
+  
+  /* ================================================== */
+  /* === PASO 2 (Continuación): Definir la clase para usar los iconos === */
+  /* ================================================== */
+  
+  /* Esta regla le dice al navegador:
+     "Cualquier elemento HTML que tenga la clase 'material-icons'
+     debe usar la fuente 'Material Icons' que definimos arriba
+     y aplicar estos estilos básicos para que se vea bien." */
+  .material-icons {
+    font-family: 'Material Icons'; /* ¡Usa la fuente que cargamos! */
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;  /* Tamaño predeterminado, puedes cambiarlo */
+    line-height: 1;   /* Evita espacio extra arriba/abajo */
+    letter-spacing: normal;
+    text-transform: none; /* No cambies mayúsculas/minúsculas */
+    display: inline-block; /* Para que se comporte bien con el texto */
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+  
+    /* Mejoras de renderizado (recomendadas por Google) */
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: 'liga';
+  }
+  

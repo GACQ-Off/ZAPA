@@ -1,0 +1,91 @@
+#cuerpo_formulario {
+    display: flex;
+}
+
+#cuerpo_formulario {
+    flex-direction: column;
+    height: fit-content;
+    margin: 1rem 1rem 1rem 0;
+}
+
+.formulario_tabla {
+    width: 100%;
+    height: fit-content;
+}
+
+.formulario_tabla tbody tr {
+    height: fit-content;
+    background-color: transparent;
+}
+
+
+.formulario_tabla tbody tr td {
+    vertical-align: top;
+}
+
+.formulario_tabla tbody tr td div {
+    flex-direction: column;
+    display: flex;
+    gap: .2rem;
+    height: fit-content;
+}
+
+
+input,
+select,
+#dom_formulario {
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    height: fit-content;
+    border: transparent 0.15rem;
+    border-bottom: rgb(91, 91, 91) 0.15rem solid;
+    background-color: rgb(221, 221, 221);
+    color: #000;
+    transition: 0.3s;
+    padding-left: .5rem;
+    line-height: 1.5rem; 
+}
+
+input:hover,
+select:hover,
+#dom_formulario:hover {
+    border-bottom-color: #000;
+    transition: 0.3s;
+}
+
+input:focus,
+select:focus,
+#dom_formulario:focus {
+    outline: none;
+    border-bottom-color: rgb(58, 128, 121);
+}
+
+#ci_formulario,
+#tel_formulario,
+#f_nac_formulario,
+#f_fall_formulario {
+    width: 10rem; 
+}
+
+#nom_formulario,
+#ape_formulario,
+#mail_formulario {
+    width: 14rem; 
+}
+
+#pseu_formulario,
+#dom_formulario {
+    width: 31rem; 
+}
+
+#dom_formulario {
+    height: 4.5rem;
+    cursor: text; 
+    border-radius: 0;
+    overflow-x: hidden;
+}
+
+#primer_modal__contenedor,
+#modal_area_dinamica {
+    width: fit-content;
+}

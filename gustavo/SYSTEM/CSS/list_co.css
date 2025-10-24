@@ -1,0 +1,94 @@
+#cuerpo_formulario {
+    display: flex;
+}
+
+#cuerpo_formulario {
+    flex-direction: column;
+    height: fit-content;
+}
+
+.formulario_tabla {
+    width: 100%;
+    height: fit-content;
+}
+
+.formulario_tabla tbody tr {
+    height: fit-content;
+    background-color: transparent;
+}
+
+.formulario_tabla tbody tr td {
+    vertical-align: top;
+}
+
+.formulario_tabla tbody tr td div {
+    flex-direction: column;
+    display: flex;
+    gap: .2rem;
+    height: fit-content;
+}
+
+input,
+select,
+#resu_formulario {
+    margin-left: 0.75rem;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    height: fit-content;
+    border: transparent 0.15rem;
+    border-bottom: rgb(91, 91, 91) 0.15rem solid;
+    background-color: rgb(221, 221, 221);
+    color: #000;
+    transition: 0.3s;
+    padding-left: .5rem;
+    line-height: 1.5rem; 
+}
+
+input:hover,
+select:hover,
+#resu_formulario:hover {
+    outline: none;
+    border-bottom-color: #000;
+    transition: 0.3s;
+}
+
+input:focus,
+select:focus,
+#resu_formulario:focus {
+    border-bottom-color: rgb(58, 128, 121);
+    transition: 0.3s;
+    outline: none;
+}
+
+#id_formulario,
+#f_cr_formulario {
+    width: 10.35rem;
+    margin: 0 0 0 0.5rem; 
+}
+
+#ti_formulario {
+    width: 28rem;
+    margin: 0 0 0 0.5rem; 
+}
+
+#tip_formulario {
+    width: 12rem;
+    margin: 0 0 0 0.5rem; 
+}
+
+#es_formulario {
+    width: 12rem;
+    margin: 0 0 0 0.5rem; 
+}
+
+#resu_formulario {
+    height: 6rem;
+    width: 43.5rem;
+    overflow-x: hidden;
+    margin: 0 0 0 0.5rem;
+}
+
+#primer_modal__contenedor,
+#modal_area_dinamica {
+    width: fit-content;
+}

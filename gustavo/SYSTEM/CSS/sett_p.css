@@ -1,0 +1,209 @@
+/* LIMPIO */
+
+#listados_ {
+    background-color: rgb(255, 255, 255, .7);
+    border: 0.2rem rgb(211, 211, 211) solid;
+    flex-direction: column;
+    height: 350px;
+    flex-grow: 1;
+    width: 100%;
+    padding: 1.2rem;
+    border-radius: 3rem;
+}
+
+#contenedor_de_botones {
+    display: flex;
+    position: relative;
+    height: 100%;
+    min-height: fit-content;
+    border-radius: 1.25rem;
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: relative;
+    flex-direction: row;
+}
+
+.contenedor_mitad p {
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.contenedor_mitad {
+    display: flex;
+    flex-direction: column;
+    width: 28rem;
+    margin-top: 1.25rem;
+    text-align: center;
+    gap: 1rem;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+.imagen_contenedor_uno {
+    align-self: center;
+    width: fit-content;
+    height: fit-content;
+}
+
+#imagen_previa {
+    border-radius: 50%;
+    background-color: gray;
+    border: 0.15rem rgb(170, 169, 169) solid;
+    transition: 0.3s;
+    min-width: 6rem;
+    min-height:6.5rem;
+    max-width: 12.5rem;
+    max-height: 12.5rem;
+    margin: .1rem;
+}
+
+label {
+    font-weight: bold;
+    user-select: none;
+}
+
+#segundoparte {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    padding-right: 1rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+#segundoparte fieldset {
+    width: 100%;
+}
+
+#informacion_general {
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    width: 100%;
+}
+
+#informacion_general div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+input,
+select {
+    margin-left: 0.75rem;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    height: fit-content;
+    border: transparent 0.15rem;
+    border-bottom: rgb(91, 91, 91) 0.15rem solid;
+    background-color: rgb(221, 221, 221);
+    color: #000;
+    transition: 0.3s;
+    padding-left: .5rem;
+    line-height: 1.5rem; 
+}
+
+input:hover,
+select:hover {
+    border-bottom-color: #000;
+    transition: 0.3s;
+}
+
+input:focus,
+select:focus {
+    border-bottom-color: rgb(58, 128, 121);
+    transition: 0.3s;
+    outline: none;
+}
+
+#ci_formulario{
+    width: 14rem; 
+}
+
+#tel_formulario {
+    width: 8rem; 
+}
+
+#nom_formulario,
+#ape_formulario {
+    width: 14rem; 
+}
+
+#mail_formulario {
+    width: 14rem; 
+}
+
+#f_nac_formulario {
+    width: 14rem; 
+}
+
+#dom_formulario {
+    width: 31rem;
+    margin-left: 0.75rem;
+    cursor: text;
+    transition: 0.3s;
+    height: 3.5rem;
+    overflow-x: hidden;
+}
+
+#dom_formulario:hover {
+    border: transparent 0.15rem;
+    border-bottom: #000 0.15rem solid;
+    transition: 0.3s;
+    cursor: text;
+}
+
+#dom_formulario:focus {
+    border: transparent 0.15rem;
+    border-bottom: rgb(58, 128, 121) 0.15rem solid;
+    transition: 0.3s;
+    outline: none;
+}
+
+#informacion_usuario {
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem;
+}
+
+#informacion_usuario div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+#nick_formulario,
+#pass_formulario,
+#rol_formulario {
+    width: 14rem; 
+}
+
+#rol_formulario {
+    margin-top: 0;
+}
+
+.formulario_tabla {
+    width: 100%;
+    height: fit-content;
+    background-color: transparent;
+}
+
+.formulario_tabla tbody tr {
+    height: fit-content;
+    background-color: transparent;
+}
+
+.formulario_tabla tbody tr td {
+    vertical-align: top;
+}
+
+.formulario_tabla tbody tr td div {
+    flex-direction: column;
+    display: flex;
+    gap: .2rem;
+    height: fit-content;
+}

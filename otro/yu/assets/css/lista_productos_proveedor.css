@@ -1,0 +1,55 @@
+    .container {
+        padding: 0px 0px 0px 20px;
+        width: 130%;
+        max-width: 960px;
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        border-radius: 8px; 
+        overflow: hidden;   
+        margin-top: 20px;
+    }
+    th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+    th {
+        background-color: #c8d0d8;
+        color: #333333; 
+    }
+    td {
+        color: #333333;
+    }
+    tr:nth-child(even) {
+        background-color: #f8f9fa; 
+    }
+    tr:hover {
+        background-color: #e9ecef; 
+    }
+    .mensaje-error {
+        color: red;
+        font-weight: bold;
+    }
+    .mensaje-advertencia {
+        color: orange;
+        font-weight: bold;
+    }
+    .resumen-productos p {
+        margin: 0;
+        font-size: 1.1em;
+    }
+    .btn-regresar {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #6c757d;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-top: 20px;
+}
+
+.btn-regresar:hover {
+    background-color: #5a6268;
+}

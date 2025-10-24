@@ -1,0 +1,1179 @@
+/*
+ * AdminLTE v2.4.0
+ * Copyright 2015-2018 Almsaeed Studio <almsaeedstudio@gmail.com>
+ * Licensed under MIT (https://github.com/almasaeed2010/AdminLTE/blob/master/LICENSE)
+ */
+
+/* =========================================================
+   Estilos Base y Diseño General
+   ========================================================= */
+html,
+body {
+  height: 100%; /* Asegura que el HTML y el cuerpo ocupen todo el alto de la ventana. */
+}
+
+/* Estilos específicos cuando el layout es "boxed" (en caja) */
+.layout-boxed html,
+.layout-boxed body {
+  height: 100%; /* También al 100% para el modo en caja. */
+}
+body {
+  font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Define la fuente principal para todo el texto. */
+  font-weight: 400; /* Peso de la fuente normal. */
+  overflow-x: hidden; /* Evita barras de desplazamiento horizontales no deseadas. */
+  overflow-y: auto; /* Permite el desplazamiento vertical si el contenido excede el alto. */
+}
+
+.wrapper {
+  height: 100%; /* El contenedor principal ocupa el 100% del alto. */
+  position: relative; /* Establece un contexto de posicionamiento para elementos internos. */
+  overflow-x: hidden; /* Evita el scroll horizontal dentro del wrapper. */
+  overflow-y: auto; /* Permite el scroll vertical si el contenido del wrapper es largo. */
+}
+/* Pseudoelementos para "limpiar floats" dentro de .wrapper, una técnica para asegurar que los elementos flotados no rompan el layout. */
+.wrapper:before,
+.wrapper:after {
+  content: " ";
+  display: table;
+}
+.wrapper:after {
+  clear: both;
+}
+
+/* Estilos para el layout "en caja" */
+.layout-boxed .wrapper {
+  max-width: 1250px; /* Limita el ancho máximo del contenido. */
+  margin: 0 auto; /* Centra el contenedor en la página. */
+  min-height: 100%; /* Altura mínima del 100%. */
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.5); /* Añade una sombra para dar el efecto de caja flotante. */
+  position: relative;
+}
+.layout-boxed {
+  background: url('../img/boxed-bg.jpg') repeat fixed; /* Fondo de imagen repetido para el área fuera de la caja. */
+}
+
+/* =========================================================
+   Contenido Principal y Pie de Página
+   ========================================================= */
+.content-wrapper,
+.main-footer {
+  /* Transiciones suaves para animar cambios de margen y transformación. */
+  -webkit-transition: -webkit-transform 0.3s ease-in-out, margin 0.3s ease-in-out;
+  -moz-transition: -moz-transform 0.3s ease-in-out, margin 0.3s ease-in-out;
+  -o-transition: -o-transform 0.3s ease-in-out, margin 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, margin 0.3s ease-in-out;
+  margin-left: 230px; /* Margen inicial para dejar espacio al sidebar izquierdo. */
+  z-index: 820; /* Controla el orden de apilamiento de elementos. */
+}
+
+/* Si la navegación está en la parte superior, no hay margen izquierdo. */
+.layout-top-nav .content-wrapper,
+.layout-top-nav .main-footer {
+  margin-left: 0;
+}
+
+/* Media query: En pantallas pequeñas (hasta 767px), el margen izquierdo se elimina. */
+@media (max-width: 767px) {
+  .content-wrapper,
+  .main-footer {
+    margin-left: 0;
+  }
+}
+/* Media query: En pantallas de tamaño mediano o grande (desde 768px), si el sidebar está colapsado, el margen izquierdo se elimina. */
+@media (min-width: 768px) {
+  .sidebar-collapse .content-wrapper,
+  .sidebar-collapse .main-footer {
+    margin-left: 0;
+  }
+}
+/* Media query: En pantallas pequeñas (hasta 767px), si el sidebar está abierto, el contenido se desplaza 230px a la derecha. */
+@media (max-width: 767px) {
+  .sidebar-open .content-wrapper,
+  .sidebar-open .main-footer {
+    -webkit-transform: translate(230px, 0);
+    -ms-transform: translate(230px, 0);
+    -o-transform: translate(230px, 0);
+    transform: translate(230px, 0);
+  }
+}
+
+.content-wrapper {
+  background-image: url('fondo.jpg'); /* **¡Tu personalización!** Establece 'fondo.jpg' como imagen de fondo. */
+  background-size: 100%; /* **¡Tu personalización!** La imagen se ajusta al 100% del tamaño del contenedor. */
+  background-attachment: fixed; /* **¡Tu personalización!** La imagen de fondo permanece fija al hacer scroll. */
+}
+
+.main-footer {
+  background: #fff; /* Fondo blanco para el pie de página. */
+  padding: 15px; /* Espaciado interno. */
+  color: blue; /* **¡Tu personalización!** El texto del pie de página es azul. */
+  border-top: 1px solid #d2d6de; /* Borde superior. */
+}
+
+/* =========================================================
+   Layout Fijo y Transiciones Desactivadas
+   ========================================================= */
+/* Cuando la clase 'fixed' está presente, estos elementos se quedan visibles en la pantalla al hacer scroll. */
+.fixed .main-header,
+.fixed .main-sidebar,
+.fixed .left-side {
+  position: fixed;
+}
+.fixed .main-header {
+  top: 0;
+  right: 0;
+  left: 0; /* Asegura que el header fijo ocupe todo el ancho superior. */
+}
+.fixed .content-wrapper,
+.fixed .right-side {
+  padding-top: 50px; /* Añade espacio en la parte superior para evitar que el contenido quede oculto bajo el header fijo. */
+}
+/* Media query: En pantallas pequeñas, el padding superior es mayor para el header fijo. */
+@media (max-width: 767px) {
+  .fixed .content-wrapper,
+  .fixed .right-side {
+    padding-top: 100px;
+  }
+}
+.fixed.layout-boxed .wrapper {
+  max-width: 100%;
+}
+.fixed .wrapper {
+  overflow: hidden;
+}
+
+/* La clase 'hold-transition' se usa para deshabilitar temporalmente las animaciones (ej. al cargar la página) */
+.hold-transition .content-wrapper,
+.hold-transition .right-side,
+.hold-transition .main-footer,
+.hold-transition .main-sidebar,
+.hold-transition .left-side,
+.hold-transition .main-header .navbar,
+.hold-transition .main-header .logo,
+.hold-transition .menu-open .fa-angle-left {
+  -webkit-transition: none;
+  -o-transition: none;
+  transition: none;
+}
+
+/* =========================================================
+   Contenido y Tipografía Adicional
+   ========================================================= */
+.content {
+  min-height: 250px; /* Altura mínima para el área de contenido principal. */
+  padding: 15px; /* Relleno interno. */
+  margin-right: auto; /* Centrado horizontal si es necesario. */
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Estilos de fuente para todos los encabezados HTML y clases h1-h6. */
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+/* Estilos generales para los enlaces. */
+a {
+  color: #337ab7; /* Color por defecto de los enlaces. */
+}
+a:hover,
+a:active,
+a:focus {
+  outline: none; /* Elimina el contorno al enfocar. */
+  text-decoration: none; /* Elimina el subrayado. */
+  color: #23527c; /* Color de los enlaces al pasar el mouse o activarlos. */
+}
+
+/* Estilos para el título de la página (ej. "Dashboard") */
+.page-header {
+  margin: 10px 0 20px 0;
+  font-size: 22px;
+}
+.page-header > small {
+  color: #666;
+  display: block;
+  margin-top: 5px;
+}
+
+/* =========================================================
+   Cabecera Principal
+   ========================================================= */
+.main-header {
+  position: relative;
+  max-height: 100px;
+  z-index: 1030; /* Asegura que la cabecera esté por encima de otros elementos. */
+}
+.tableOverflow > div{
+  overflow: auto; /* Permite scroll interno para tablas o contenido desbordante. */
+}
+.main-header .navbar {
+  /* Transiciones para el margen izquierdo de la barra de navegación. */
+  -webkit-transition: margin-left 0.3s ease-in-out;
+  -o-transition: margin-left 0.3s ease-in-out;
+  transition: margin-left 0.3s ease-in-out;
+  margin-bottom: 0;
+  margin-left: 230px; /* Margen inicial para el sidebar. */
+  border: none;
+  min-height: 50px;
+  border-radius: 0;
+}
+/* Sin margen izquierdo para la navbar si la navegación es superior. */
+.layout-top-nav .main-header .navbar {
+  margin-left: 0;
+}
+/* Estilos para el campo de búsqueda en la barra de navegación. */
+.main-header #navbar-search-input.form-control {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: transparent;
+}
+.main-header #navbar-search-input.form-control:focus,
+.main-header #navbar-search-input.form-control:active {
+  border-color: rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.9);
+}
+.main-header #navbar-search-input.form-control::-moz-placeholder {
+  color: #ccc;
+  opacity: 1;
+}
+.main-header #navbar-search-input.form-control:-ms-input-placeholder {
+  color: #ccc;
+}
+.main-header #navbar-search-input.form-control::-webkit-input-placeholder {
+  color: #ccc;
+}
+
+/* Alinea los menús personalizados y elementos a la derecha de la navbar. */
+.main-header .navbar-custom-menu,
+.main-header .navbar-right {
+  float: right;
+}
+/* Media query: En pantallas medianas (hasta 991px), los enlaces de menú no tienen color de fondo. */
+@media (max-width: 991px) {
+  .main-header .navbar-custom-menu a,
+  .main-header .navbar-right a {
+    color: inherit;
+    background: transparent;
+  }
+}
+/* Media query: En pantallas pequeñas (hasta 767px), el menú derecho no flota. */
+@media (max-width: 767px) {
+  .main-header .navbar-right {
+    float: none;
+  }
+  .main-header .navbar-custom-menu .navbar-nav > li {
+    display: block;
+  }
+  .main-header .navbar-custom-menu .navbar-nav > li > a {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+}
+
+/* Botón para alternar (abrir/cerrar) el sidebar. */
+.main-header .sidebar-toggle {
+  float: left;
+  background-color: transparent;
+  background-image: none;
+  padding: 15px 15px;
+  font-family: fontAwesome; /* Usa un icono de Font Awesome. */
+}
+.main-header .sidebar-toggle:before {
+  content: "\f0c9"; /* Código de icono de hamburguesa. */
+}
+.main-header .sidebar-toggle:hover {
+  color: #fff;
+}
+.main-header .sidebar-toggle:focus,
+.main-header .sidebar-toggle:active {
+  background-color: transparent;
+}
+
+/* Estilos para iconos y etiquetas (labels) en la barra de navegación. */
+.main-header .navbar .nav > li.user > a > .fa,
+.main-header .navbar .nav > li.user > a > .glyphicon,
+.main-header .navbar .nav > li.user > a > .ion {
+  margin-right: 5px;
+}
+.main-header .navbar .nav > li > a > .label {
+  position: absolute; /* Para insignias de notificación/contador. */
+  top: 9px;
+  right: 7px;
+  text-align: center;
+  font-size: 9px;
+  padding: 2px 3px;
+  line-height: .9;
+}
+
+/* Estilos para el logo en la cabecera. */
+.main-header .logo {
+  /* Transición para el cambio de ancho del logo. */
+  -webkit-transition: width 0.3s ease-in-out;
+  -o-transition: width 0.3s ease-in-out;
+  transition: width 0.3s ease-in-out;
+  display: block;
+  float: left;
+  height: 50px;
+  font-size: 20px;
+  line-height: 50px;
+  text-align: center;
+  width: 230px; /* Ancho inicial del logo (igual que el sidebar). */
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  padding: 0 15px;
+  font-weight: 300;
+  overflow: hidden;
+}
+.main-header .logo .logo-lg {
+  display: block; /* Muestra la versión grande del logo. */
+}
+.main-header .logo .logo-mini {
+  display: none; /* Oculta la versión mini (se muestra con sidebar-mini). */
+}
+.main-header .navbar-brand {
+  color: #fff;
+}
+
+/* Estilos para la cabecera del contenido (título de página y breadcrumb). */
+.content-header {
+  position: relative;
+  padding: 15px 15px 0 15px;
+}
+.content-header > h1 {
+  margin: 0;
+  font-size: 24px;
+}
+.content-header > h1 > small {
+  font-size: 15px;
+  display: inline-block;
+  padding-left: 4px;
+  font-weight: 300;
+}
+.content-header > .breadcrumb {
+  float: right;
+  background: transparent;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 12px;
+  padding: 7px 5px;
+  position: absolute;
+  top: 15px;
+  right: 10px;
+  border-radius: 2px;
+}
+.content-header > .breadcrumb > li > a {
+  color: #444;
+  text-decoration: none;
+  display: inline-block;
+}
+.content-header > .breadcrumb > li > a > .fa,
+.content-header > .breadcrumb > li > a > .glyphicon,
+.content-header > .breadcrumb > li > a > .ion {
+  margin-right: 5px;
+}
+.content-header > .breadcrumb > li + li:before {
+  content: '\A0/\A0';
+  padding: 0 5px;
+  color: #ccc;
+}
+/* Media query: Ajustes responsivos para el breadcrumb. */
+@media (max-width: 991px) {
+  .content-header > .breadcrumb {
+    position: relative;
+    margin-top: 5px;
+    top: 0;
+    right: 0;
+    float: none;
+    background: #d2d6de;
+    padding-left: 10px;
+  }
+  .content-header > .breadcrumb li:first-child {
+    padding-left: 5px;
+  }
+}
+
+/* Botón de alternancia para la navbar en modo móvil. */
+.navbar-toggle {
+  color: #fff;
+  border: 0;
+  margin: 0;
+  padding: 15px 15px;
+}
+/* Media queries: Ajustes responsivos para el menú de la navbar en dispositivos móviles. */
+@media (max-width: 991px) {
+  .navbar-custom-menu > .navbar-nav > li {
+    float: left;
+  }
+  .navbar-custom-menu > .navbar-nav {
+    margin: 0;
+    float: left;
+  }
+  .navbar-custom-menu > .navbar-nav > li > a {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+}
+@media (max-width: 767px) {
+  .main-header {
+    position: relative;
+  }
+  .main-header .logo,
+  .main-header .navbar {
+    width: 100%;
+    float: none;
+  }
+  .main-header .navbar {
+    margin: 0;
+  }
+  .main-header .navbar-custom-menu {
+    float: right;
+  }
+}
+/* Media query: Ajustes para el pull-left en la navbar. */
+@media (max-width: 991px) {
+  .navbar-collapse.pull-left {
+    float: none !important;
+  }
+  .navbar-collapse.pull-left + .navbar-custom-menu {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 40px;
+  }
+}
+
+/* =========================================================
+   Sidebar Principal
+   ========================================================= */
+.main-sidebar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding-top: 50px; /* Espacio para el header superior. */
+  min-height: 100%;
+  width: 230px; /* Ancho predeterminado del sidebar. */
+  z-index: 810;
+  /* Transiciones para animar la visibilidad y el ancho del sidebar. */
+  -webkit-transition: -webkit-transform 0.3s ease-in-out, width 0.3s ease-in-out;
+  -moz-transition: -moz-transform 0.3s ease-in-out, width 0.3s ease-in-out;
+  -o-transition: -o-transform 0.3s ease-in-out, width 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, width 0.3s ease-in-out;
+}
+/* Media query: En pantallas pequeñas, el padding superior es mayor. */
+@media (max-width: 767px) {
+  .main-sidebar {
+    padding-top: 100px;
+  }
+}
+/* Media query: En pantallas pequeñas, el sidebar se oculta desplazándose a la izquierda. */
+@media (max-width: 767px) {
+  .main-sidebar {
+    -webkit-transform: translate(-230px, 0);
+    -ms-transform: translate(-230px, 0);
+    -o-transform: translate(-230px, 0);
+    transform: translate(-230px, 0);
+  }
+}
+/* Media query: En pantallas grandes, si el sidebar está colapsado, también se oculta. */
+@media (min-width: 768px) {
+  .sidebar-collapse .main-sidebar {
+    -webkit-transform: translate(-230px, 0);
+    -ms-transform: translate(-230px, 0);
+    -o-transform: translate(-230px, 0);
+    transform: translate(-230px, 0);
+  }
+}
+/* Media query: En pantallas pequeñas, si el sidebar está abierto, se muestra. */
+@media (max-width: 767px) {
+  .sidebar-open .main-sidebar {
+    -webkit-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+}
+
+.sidebar {
+  padding-bottom: 10px;
+}
+.sidebar-form input:focus {
+  border-color: transparent;
+}
+
+/* Panel de usuario en el sidebar. */
+.user-panel {
+  position: relative;
+  width: 100%;
+  padding: 10px;
+  overflow: hidden;
+}
+.user-panel:before,
+.user-panel:after {
+  content: " ";
+  display: table;
+}
+.user-panel:after {
+  clear: both;
+}
+.user-panel > .image > img {
+  width: 100%;
+  max-width: 45px;
+  height: auto;
+}
+.user-panel > .info {
+  padding: 5px 5px 5px 15px;
+  line-height: 1;
+  position: absolute;
+  left: 55px;
+}
+.user-panel > .info > a {
+  color: #fff;
+}
+.user-panel > .info > p {
+  font-weight: 600;
+  margin-bottom: 9px;
+}
+.user-panel > .info > .status {
+  font-size: 11px;
+}
+.user-panel > .info > .status > i {
+  margin-right: 5px;
+}
+
+/* Menú de navegación del sidebar. */
+.sidebar-menu {
+  list-style: none; /* Elimina los puntos de lista. */
+  margin: 0;
+  padding: 0;
+}
+.sidebar-menu > li {
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+.sidebar-menu > li > a {
+  padding: 12px 5px 12px 15px;
+  display: block;
+  font-size: 18px; /* **¡Tu personalización!** Aumenta el tamaño de fuente de los ítems del menú. */
+}
+.sidebar-menu > li > a > .fa,
+.sidebar-menu > li > a > .glyphicon,
+.sidebar-menu > li > a > .ion {
+  width: 20px;
+  margin-right: 5px;
+}
+.sidebar-menu > li .label,
+.sidebar-menu > li .badge {
+  margin-right: 5px;
+}
+.sidebar-menu > li .badge {
+  margin-top: 3px;
+}
+.sidebar-menu li.header {
+  padding: 10px 25px 10px 15px;
+  font-size: 15px;
+}
+/* Flechas de los submenús. */
+.sidebar-menu li > a > .fa-angle-left,
+.sidebar-menu li > a > .pull-right-container > .fa-angle-left {
+  width: auto;
+  height: auto;
+  padding: 0;
+  margin-right: 10px;
+  /* Transición para la rotación de la flecha. */
+  -webkit-transition: transform 0.5s ease;
+  -o-transition: transform 0.5s ease;
+  transition: transform 0.5s ease;
+}
+.sidebar-menu li > a > .fa-angle-left {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  margin-top: -8px;
+}
+/* Rota la flecha cuando el submenú está abierto. */
+.sidebar-menu .menu-open > a > .fa-angle-left,
+.sidebar-menu .menu-open > a > .pull-right-container > .fa-angle-left {
+  -webkit-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
+.sidebar-menu .active > .treeview-menu {
+  display: block; /* Muestra el submenú si el ítem padre está activo. */
+}
+
+/* =========================================================
+   Sidebar Mini
+   ========================================================= */
+/* Media query: Estilos para el sidebar colapsado (mini) en pantallas grandes. */
+@media (min-width: 768px) {
+  .sidebar-mini.sidebar-collapse .content-wrapper,
+  .sidebar-mini.sidebar-collapse .right-side,
+  .sidebar-mini.sidebar-collapse .main-footer {
+    margin-left: 50px !important; /* El contenido se mueve para acomodar el sidebar mini. */
+    z-index: 840;
+  }
+  .sidebar-mini.sidebar-collapse .main-sidebar {
+    -webkit-transform: translate(0, 0); /* El sidebar se mantiene visible, pero con ancho reducido. */
+    -ms-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    transform: translate(0, 0);
+    width: 50px !important; /* Ancho del sidebar mini. */
+    z-index: 850;
+  }
+  /* Oculta elementos del sidebar cuando está en modo mini. */
+  .sidebar-mini.sidebar-collapse .main-sidebar .user-panel > .info,
+  .sidebar-mini.sidebar-collapse .sidebar-form,
+  .sidebar-mini.sidebar-collapse .sidebar-menu > li > a > span,
+  .sidebar-mini.sidebar-collapse .sidebar-menu > li > .treeview-menu,
+  .sidebar-mini.sidebar-collapse .sidebar-menu > li > a > .pull-right,
+  .sidebar-mini.sidebar-collapse .sidebar-menu li.header {
+    display: none !important;
+    -webkit-transform: translateZ(0);
+  }
+  /* Ajustes para el logo cuando el sidebar es mini. */
+  .sidebar-mini.sidebar-collapse .main-header .logo {
+    width: 50px;
+  }
+  .sidebar-mini.sidebar-collapse .main-header .logo > .logo-mini {
+    display: block; /* Muestra la versión mini del logo. */
+    margin-left: -15px;
+    margin-right: -15px;
+    font-size: 18px;
+  }
+  .sidebar-mini.sidebar-collapse .main-header .logo > .logo-lg {
+    display: none; /* Oculta la versión grande del logo. */
+  }
+  .sidebar-mini.sidebar-collapse .main-header .navbar {
+    margin-left: 50px; /* El margen de la navbar se ajusta. */
+  }
+}
+/* Estilos para la funcionalidad de expansión del sidebar mini al pasar el mouse. */
+.sidebar-mini:not(.sidebar-mini-expand-feature).sidebar-collapse .sidebar-menu > li:hover > a > span:not(.pull-right),
+.sidebar-mini:not(.sidebar-mini-expand-feature).sidebar-collapse .sidebar-menu > li:hover > .treeview-menu {
+  display: block !important;
+  position: absolute;
+  width: 180px;
+  left: 50px;
+}
+.sidebar-mini:not(.sidebar-mini-expand-feature).sidebar-collapse .sidebar-menu > li:hover > a {
+  background-color: #2c3b41;
+}
+.sidebar-mini:not(.sidebar-mini-expand-feature).sidebar-collapse .sidebar-menu > li:hover > a > .pull-right-container {
+  display: block !important;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  margin-top: -7px;
+}
+.sidebar-mini:not(.sidebar-mini-expand-feature).sidebar-collapse .sidebar-menu > li:hover > .treeview-menu {
+  top: 48px;
+  left: 50px;
+}
+/* Asegura que el texto no se rompa y que el desbordamiento se maneje correctamente. */
+.sidebar-menu,
+.main-sidebar .user-panel,
+.sidebar-menu > li.header {
+  white-space: nowrap;
+  overflow: hidden;
+}
+.sidebar-menu:hover {
+  overflow: visible; /* Permite que el contenido desbordante se vea al pasar el mouse. */
+}
+.sidebar-form,
+.sidebar-menu > li.header {
+  overflow: hidden;
+  text-overflow: clip;
+}
+.sidebar-menu li > a {
+  position: relative;
+}
+.sidebar-menu li > a > .pull-right-container {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  margin-top: -7px;
+}
+
+/* =========================================================
+   Control Sidebar (Barra Lateral Derecha)
+   ========================================================= */
+.control-sidebar-bg {
+  position: fixed;
+  z-index: 1000;
+  bottom: 0;
+}
+.control-sidebar-bg,
+.control-sidebar {
+  top: 0;
+  right: -230px; /* Inicialmente oculta fuera de la pantalla a la derecha. */
+  width: 230px;
+  /* Transición para animar la entrada y salida del control sidebar. */
+  -webkit-transition: right 0.3s ease-in-out;
+  -o-transition: right 0.3s ease-in-out;
+  transition: right 0.3s ease-in-out;
+}
+.control-sidebar {
+  position: absolute;
+  padding-top: 50px;
+  z-index: 1010;
+}
+/* Media query: Padding superior diferente en pantallas pequeñas. */
+@media (max-width: 768px) {
+  .control-sidebar {
+    padding-top: 100px;
+  }
+}
+.control-sidebar > .tab-content {
+  padding: 10px 15px;
+}
+/* Cuando el control sidebar está abierto, se mueve a la posición 0. */
+.control-sidebar.control-sidebar-open,
+.control-sidebar.control-sidebar-open + .control-sidebar-bg {
+  right: 0;
+}
+/* Media query: Si el control sidebar está abierto, el contenido principal se mueve a la izquierda. */
+@media (min-width: 768px) {
+  .control-sidebar-open .content-wrapper,
+  .control-sidebar-open .right-side,
+  .control-sidebar-open .main-footer {
+    margin-right: 230px;
+  }
+}
+.fixed .control-sidebar {
+  position: fixed;
+  height: 100%;
+  overflow-y: auto;
+  padding-bottom: 50px;
+}
+/* Estilos para las pestañas de navegación dentro del control sidebar. */
+.nav-tabs.control-sidebar-tabs > li:first-of-type > a,
+.nav-tabs.control-sidebar-tabs > li:first-of-type > a:hover,
+.nav-tabs.control-sidebar-tabs > li:first-of-type > a:focus {
+  border-left-width: 0;
+}
+.nav-tabs.control-sidebar-tabs > li > a {
+  border-radius: 0;
+}
+.nav-tabs.control-sidebar-tabs > li > a,
+.nav-tabs.control-sidebar-tabs > li > a:hover {
+  background: transparent;
+  color: #888;
+}
+.nav-tabs.control-sidebar-tabs > li.active > a,
+.nav-tabs.control-sidebar-tabs > li.active > a:hover,
+.nav-tabs.control-sidebar-tabs > li.active > a:focus {
+  color: #444;
+  background: #fff;
+}
+/* Media query: Las pestañas se comportan como una tabla en pantallas pequeñas. */
+@media (max-width: 768px) {
+  .nav-tabs.control-sidebar-tabs {
+    display: table;
+  }
+  .nav-tabs.control-sidebar-tabs > li {
+    display: table-cell;
+  }
+}
+
+/* Estilos para encabezados y subencabezados dentro del control sidebar. */
+.control-sidebar-heading {
+  font-weight: 400;
+  font-size: 16px;
+  padding: 10px 0;
+  margin-bottom: 10px;
+}
+.control-sidebar-subheading {
+  display: block;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+/* Estilos para el menú del control sidebar. */
+.control-sidebar-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0 -15px;
+}
+.control-sidebar-menu > li > a {
+  display: block;
+  padding: 10px 15px;
+}
+.control-sidebar-menu > li > a:before,
+.control-sidebar-menu > li > a:after {
+  content: " ";
+  display: table;
+}
+.control-sidebar-menu > li > a:after {
+  clear: both;
+}
+.control-sidebar-menu > li > a > .control-sidebar-subheading {
+  margin-top: 0;
+}
+.control-sidebar-menu .menu-icon {
+  float: left;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 35px;
+}
+.control-sidebar-menu .menu-info {
+  margin-left: 45px;
+  margin-top: 3px;
+}
+.control-sidebar-menu .menu-info > .control-sidebar-subheading {
+  margin: 0;
+}
+.control-sidebar-menu .menu-info > p {
+  margin: 0;
+  font-size: 11px;
+}
+.control-sidebar-menu .progress {
+  margin: 0;
+}
+
+/* Temas de color para el control sidebar. */
+.control-sidebar-dark {
+  color: #b8c7ce;
+}
+.control-sidebar-dark,
+.control-sidebar-dark + .control-sidebar-bg {
+  background: #222d32; /* Fondo oscuro. */
+}
+.control-sidebar-dark .nav-tabs.control-sidebar-tabs > li > a,
+.control-sidebar-dark .nav-tabs.control-sidebar-tabs > li > a:hover,
+.control-sidebar-dark .nav-tabs.control-sidebar-tabs > li > a:focus {
+  color: #b8c7ce;
+}
+.control-sidebar-dark .nav-tabs.control-sidebar-tabs > li.active > a,
+.control-sidebar-dark .nav-tabs.control-sidebar-tabs > li.active > a:hover,
+.control-sidebar-dark .nav-tabs.control-sidebar-tabs > li.active > a:focus {
+  color: #fff;
+  background: #1a2226;
+}
+.control-sidebar-light {
+  color: #5e5e5e;
+}
+.control-sidebar-light,
+.control-sidebar-light + .control-sidebar-bg {
+  background: #f9fafc; /* Fondo claro. */
+  border-left: 1px solid #d2d6de;
+}
+.control-sidebar-light .nav-tabs.control-sidebar-tabs > li > a,
+.control-sidebar-light .nav-tabs.control-sidebar-tabs > li > a:hover,
+.control-sidebar-light .nav-tabs.control-sidebar-tabs > li > a:focus {
+  color: #888;
+}
+.control-sidebar-light .nav-tabs.control-sidebar-tabs > li.active > a,
+.control-sidebar-light .nav-tabs.control-sidebar-tabs > li.active > a:hover,
+.control-sidebar-light .nav-tabs.control-sidebar-tabs > li.active > a:focus {
+  color: #444;
+  background: #fff;
+}
+
+/* =========================================================
+   Menús Desplegables
+   ========================================================= */
+/* Estilos generales para todos los menús desplegables. */
+.dropdown-menu {
+  box-shadow: none; /* Elimina la sombra por defecto. */
+  border-color: #eee; /* Color del borde. */
+}
+.dropdown-menu > li > a {
+  color: #777;
+}
+.dropdown-menu > li > a > .glyphicon,
+.dropdown-menu > li > a > .fa,
+.dropdown-menu > li > a > .ion {
+  margin-right: 10px; /* Espacio para los iconos. */
+}
+.dropdown-menu > li > a:hover {
+  background-color: #e1e3e9; /* Color de fondo al pasar el mouse. */
+  color: #333;
+}
+.dropdown-menu > .divider {
+  background-color: #eee; /* Color del divisor. */
+}
+
+/* Estilos específicos para los menús de notificaciones, mensajes y tareas. */
+.navbar-nav > .notifications-menu > .dropdown-menu,
+.navbar-nav > .messages-menu > .dropdown-menu,
+.navbar-nav > .tasks-menu > .dropdown-menu {
+  width: 280px; /* Ancho fijo para estos menús. */
+  padding: 0;
+  margin: 0;
+  top: 100%; /* Se despliegan debajo del elemento padre. */
+}
+/* Encabezado del menú desplegable (ej. "Tienes X notificaciones"). */
+.navbar-nav > .notifications-menu > .dropdown-menu > li.header,
+.navbar-nav > .messages-menu > .dropdown-menu > li.header,
+.navbar-nav > .tasks-menu > .dropdown-menu > li.header {
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  background-color: #ffffff;
+  padding: 7px 10px;
+  border-bottom: 1px solid #f4f4f4;
+  color: #444444;
+  font-size: 14px;
+}
+/* Pie de página del menú desplegable (ej. "Ver todas las notificaciones"). */
+.navbar-nav > .notifications-menu > .dropdown-menu > li.footer > a,
+.navbar-nav > .messages-menu > .dropdown-menu > li.footer > a,
+.navbar-nav > .tasks-menu > .dropdown-menu > li.footer > a {
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+  font-size: 12px;
+  background-color: #fff;
+  padding: 7px 10px;
+  border-bottom: 1px solid #eeeeee;
+  color: #444 !important;
+  text-align: center;
+}
+.navbar-nav > .notifications-menu > .dropdown-menu > li.footer > a:hover,
+.navbar-nav > .messages-menu > .dropdown-menu > li.footer > a:hover,
+.navbar-nav > .tasks-menu > .dropdown-menu > li.footer > a:hover {
+  background: #fcfcfc;
+}
+
+/* Contenedor del scroll dentro de los menús de notificaciones/mensajes/tareas. */
+.navbar-nav > .notifications-menu > .dropdown-menu > li .menu,
+.navbar-nav > .messages-menu > .dropdown-menu > li .menu,
+.navbar-nav > .tasks-menu > .dropdown-menu > li .menu {
+  max-height: 200px; /* Altura máxima antes de que aparezca la barra de desplazamiento. */
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow-x: hidden;
+  overflow-y: auto; /* Permite scroll vertical si hay muchos ítems. */
+}
+/* Estilos para los ítems individuales de notificaciones. */
+.navbar-nav > .notifications-menu > .dropdown-menu > li .menu > li > a {
+  display: block;
+  white-space: nowrap; /* Evita que el texto se rompa en varias líneas. */
+  border-bottom: 1px solid #f4f4f4;
+  color: #444444;
+  overflow: hidden;
+  text-overflow: ellipsis; /* Añade puntos suspensivos si el texto se desborda. */
+  padding: 10px;
+}
+.navbar-nav > .notifications-menu > .dropdown-menu > li .menu > li > a > .fa,
+.navbar-nav > .notifications-menu > .dropdown-menu > li .menu > li > a > .glyphicon,
+.navbar-nav > .notifications-menu > .dropdown-menu > li .menu > li > a > .ion {
+  width: 20px;
+}
+
+/* Estilos para los ítems individuales de mensajes. */
+.navbar-nav > .messages-menu > .dropdown-menu > li .menu > li > a {
+  margin: 0;
+  padding: 10px 10px;
+}
+.navbar-nav > .messages-menu > .dropdown-menu > li .menu > li > a > div > img {
+  margin: auto 10px auto auto;
+  width: 40px;
+  height: 40px;
+}
+.navbar-nav > .messages-menu > .dropdown-menu > li .menu > li > a > h4 {
+  padding: 0;
+  margin: 0 0 0 45px;
+  font-size: 15px;
+  position: relative;
+}
+.navbar-nav > .messages-menu > .dropdown-menu > li .menu > li > a > h4 > small {
+  color: #999;
+  font-size: 10px;
+  position: absolute;
+  right: 0;
+}
+.navbar-nav > .messages-menu > .dropdown-menu > li .menu > li > a > p {
+  margin: 0 0 0 45px;
+  font-size: 12px;
+  color: #888;
+}
+
+/* Estilos para los ítems individuales de tareas. */
+.navbar-nav > .tasks-menu > .dropdown-menu > li .menu > li > a {
+  padding: 10px;
+}
+.navbar-nav > .tasks-menu > .dropdown-menu > li .menu > li > a > h3 {
+  font-size: 14px;
+  padding: 0;
+  margin: 0 0 10px 0;
+  color: #666666;
+}
+.navbar-nav > .tasks-menu > .dropdown-menu > li .menu > li > a > .progress {
+  padding: 0;
+  margin: 0;
+}
+
+/* Estilos para el menú desplegable del perfil de usuario. */
+.navbar-nav > .user-menu > .dropdown-menu {
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+  padding: 1px 0 0 0;
+  border-top-width: 0;
+  width: 280px;
+}
+.navbar-nav > .user-menu > .dropdown-menu > li.user-header {
+  height: 175px;
+  padding: 10px;
+  text-align: center;
+}
+.navbar-nav > .user-menu > .dropdown-menu > li.user-header > img {
+  z-index: 5;
+  height: 90px;
+  width: 90px;
+  border: 3px solid;
+  border-color: transparent;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+.navbar-nav > .user-menu > .dropdown-menu > li.user-header > p {
+  z-index: 5;
+  color: #fff;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 17px;
+  margin-top: 10px;
+}
+.navbar-nav > .user-menu > .dropdown-menu > li.user-header > p > small {
+  display: block;
+  font-size: 12px;
+}
+/* Cuerpo del menú de usuario (donde van enlaces como "Perfil", "Configuración"). */
+.navbar-nav > .user-menu > .dropdown-menu > .user-body {
+  padding: 15px;
+  border-bottom: 1px solid #f4f4f4;
+  border-top: 1px solid #dddddd;
+}
+.navbar-nav > .user-menu > .dropdown-menu > .user-body:before,
+.navbar-nav > .user-menu > .dropdown-menu > .user-body:after {
+  content: " ";
+  display: table;
+}
+.navbar-nav > .user-menu > .dropdown-menu > .user-body:after {
+  clear: both;
+}
+.navbar-nav > .user-menu > .dropdown-menu > .user-body a {
+  color: #444 !important;
+}
+/* Pie de página del menú de usuario (con botones "Cerrar sesión"). */
+.navbar-nav > .user-menu > .dropdown-menu > .user-footer {
+  background-color: #f9f9f9;
+  padding: 10px;
+}
+.navbar-nav > .user-menu > .dropdown-menu > .user-footer:before,
+.navbar-nav > .user-menu > .dropdown-menu > .user-footer:after {
+  content: " ";
+  display: table;
+}
+.navbar-nav > .user-menu > .dropdown-menu > .user-footer:after {
+  clear: both;
+}
+
+/* Imagen de usuario compacta en la navbar. */
+.navbar-nav > .user-menu .user-image {
+  float: left;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  margin-right: 10px;
+  margin-top: -2px;
+}
+/* Media query: Ajustes para la imagen de usuario en pantallas pequeñas. */
+@media (max-width: 767px) {
+  .navbar-nav > .user-menu .user-image {
+    float: none;
+    margin-right: 0;
+    margin-top: -8px;
+    line-height: 10px;
+  }
+}
+
+/* Animación de los menús desplegables (clase opcional .animated-dropdown-menu). */
+.open:not(.dropup) > .animated-dropdown-menu {
+  backface-visibility: visible !important;
+  -webkit-animation: flipInX 0.7s both; /* Aplica la animación flipInX. */
+  -o-animation: flipInX 0.7s both;
+  animation: flipInX 0.7s both;
+}
+/* Definición de los keyframes para la animación 'flipInX'. */
+@keyframes flipInX {
+  0% {
+    transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+    transition-timing-function: ease-in;
+    opacity: 0;
+  }
+  40% {
+    transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+    transition-timing-function: ease-in;
+  }
+  60% {
+    transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+    opacity: 1;
+  }
+  80% {
+    transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+  }
+  100% {
+    transform: perspective(400px);
+  }
+}
+@-webkit-keyframes flipInX { /* Versión para navegadores Webkit. */
+  0% {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+    -webkit-transition-timing-function: ease-in;
+    opacity: 0;
+  }
+  40% {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+    -webkit-transition-timing-function: ease-in;
+  }
+  60% {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+    opacity: 1;
+  }
+  80% {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+  }
+  100% {
+    -webkit-transform: perspective(400px);
+  }
+}
+
+/* Ajustes de posicionamiento para los menús desplegables en la barra de navegación. */
+.navbar-custom-menu > .navbar-nav > li {
+  position: relative;
+}
+.navbar-custom-menu > .navbar-nav > li > .dropdown-menu {
+  position: absolute;
+  right: 0; /* Alinea el menú a la derecha del botón que lo activa. */
+  left: auto;
+}
+/* Media query: Ajustes responsivos para el posicionamiento de los dropdowns en la navbar. */
+@media (max-width: 991px) {
+  .navbar-custom-menu > .navbar-nav {
+    float: right;
+  }
+  .navbar-custom-menu > .navbar-nav > li {
+    position: static;
+  }
+  .navbar-custom-menu > .navbar-nav > li > .dropdown-menu {
+    position: absolute;
+    right: 5%;
+    left: auto;
+    border: 1px solid #ddd;
+    background: #fff;
+  }
+}
+
+/* =========================================================
+   Componente: Formulario
+   ========================================================= */
+.form-control {
+  /* Aquí irían más estilos para los campos de formulario, si el código no estuviera truncado. */
+  /* Ejemplos comunes: */
+  /* border: 1px solid #d2d6de; */
+  /* border-radius: 3px; */
+  /* box-shadow: none; */
+  /* padding: 6px 12px; */
+}

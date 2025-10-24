@@ -1,0 +1,92 @@
+
+#indiv_uno,
+#indiv_dos,
+#indiv_tres,
+#profe_indiv {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+#profe_indiv {
+    flex-direction: row;
+}
+
+#indiv_uno,
+#indiv_dos,
+#indiv_tres {
+    flex-direction: column;
+}
+
+#profe_indiv {
+    background-color: #F9F5EA;
+    border: 0.15rem solid #080706;
+    padding: 1rem 2rem;
+    gap: 1rem;
+    align-items: stretch;
+}
+
+#indiv_uno {
+    justify-content: flex-start; 
+}
+
+#indiv_uno img {
+    padding: 0.15rem;
+    border: 0.15rem solid #080706;
+    background-color: #F5E6CF;
+    border-radius: 50%;
+    margin: 0.25rem 0;
+}
+
+#indiv_dos {
+    width: 20rem;
+    gap: 0.5rem;
+}
+
+#indiv_dos h4 {
+    color: #080706;
+    font-weight: bold;
+    font-size: 22px;
+    text-align: left;
+}
+
+#indiv_dos h6 {
+    color: #080706;
+    font-weight: lighter;
+    font-size: 16px;
+    text-align: justify;
+}
+
+#indiv_tres {
+    gap: .5rem;
+    margin-left: 6rem;
+    align-items: end;
+    width: 100%;
+}
+
+#indiv_tres button {
+    width: 6rem;
+    color: #F9F5EA;
+    font-weight: bold;
+    transition: 0.1s;
+    cursor: pointer;
+    border: 0.15rem solid #080706;
+    padding: .5rem;
+}
+
+#indiv_tres button:hover {
+    color: #ffffff;
+    transition: 0.1s;
+}
+
+#indiv_tres button:active {
+    color: #080706;
+    transition: 0.1s;
+}
+
+#indiv_tres #eliminar {
+    background-color: #3C5777;
+}
+
+#indiv_tres #detalles {
+    background-color: #169C64;
+}

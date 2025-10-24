@@ -1,0 +1,583 @@
+* {
+
+    box-sizing: border-box;
+
+    margin: 0;
+
+    padding: 0;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+
+html {
+
+    font-size: 15px;
+
+}
+
+
+body {
+
+    background-color: darkgrey;
+
+    display: flex;
+
+    flex-direction: row;
+
+}
+
+
+.visor,
+
+.formulario {
+
+    background-color: white;
+
+    margin: 0.5rem;
+
+    border-radius: 1rem;
+
+    height: 585px;
+
+}
+
+
+.visor {
+
+    width: 60%;
+
+    background-image: url('./IMG/motor.jpeg');
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+}
+
+
+.formulario {
+
+    width: 38%;
+
+    padding: 1rem 1.5rem;
+
+    background-image: linear-gradient(to bottom, whitesmoke, #ffffff, #ffffff, #ffffff, whitesmoke);
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-around;
+
+    box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.1);
+
+}
+
+
+.formulario img[alt="Logo de la Aplicación Web"],
+
+.formulario h1,
+
+.formulario h3,
+
+#texto_breve,
+
+#sadmus,
+
+#soporte,
+
+.formulario label {
+
+    user-select: none;
+
+}
+
+
+.formulario img[alt="Logo de la Aplicación Web"] {
+
+    display: block;
+
+    margin: 0 auto;
+
+    width: 3rem;
+
+    height: 3rem;
+
+}
+
+
+.formulario h1,
+
+.formulario h3 {
+
+    text-align: center;
+
+}
+
+.formulario h3 {
+
+    font-size: 22px;
+
+}
+
+
+.formulario h1 {
+
+    font-size: 44px;
+
+}
+
+
+#texto_breve,
+
+#sadmus,
+
+#soporte,
+
+.formulario label,
+
+.formulario input {
+
+    font-size: 16px;
+
+}
+
+
+.formulario input[type="text"] {
+
+    border: none;
+
+    border-bottom: 0.25rem grey solid;
+
+    background-color: white;
+
+}
+
+
+.formulario input[type="text"]:hover {
+
+    cursor: text;
+
+    border-bottom: 0.25rem black solid;
+
+    transition: 0.1s;
+
+}
+
+
+.formulario input[type="text"]:focus {
+
+    border-bottom: 0.25rem rgb(58, 128, 121) solid;
+
+    outline: none;
+
+    transition: 0.2s;
+
+}
+
+
+.formulario input[type="text"],
+
+.formulario input[type="text"]:focus,
+
+.formulario input[type="submit"],
+
+.formulario input[type="submit"]:hover,
+
+.formulario input[type="submit"]:active,
+
+.formulario input[type="reset"],
+
+.formulario input[type="reset"]:hover,
+
+.formulario input[type="reset"]:active {
+
+    height: 2.5rem;
+
+}
+
+
+.formulario input[type="text"],
+
+.formulario input[type="text"]:focus,
+
+#tabla {
+
+    width: 100%;
+
+}
+
+
+.formulario button[type="submit"],
+
+.formulario button[type="submit"]:hover,
+
+.formulario button[type="submit"]:active,
+
+.formulario button[type="reset"],
+
+.formulario button[type="reset"]:hover,
+
+.formulario button[type="reset"]:active {
+
+    height: 2.75rem;
+
+    transition: 0.1s;
+
+    display: flex;
+
+    flex-direction: row;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 0.5rem;
+
+    border-radius: 0.1rem;
+
+    width: 15rem;
+
+}
+
+
+#tabla button[type="reset"] img,
+
+#tabla button[type="submit"] img {
+
+    width: 26px;
+
+    height: 26px;
+
+}
+
+.formulario button[type="reset"],
+
+.formulario button[type="submit"] {
+
+    margin-top: 0.5rem;
+
+    font-weight: bold;
+
+    color: white;
+
+}
+
+
+.formulario button[type="reset"] {
+
+    background-color: rgb(140, 1, 1);
+
+    border: 0.1rem solid rgb(115, 1, 1);
+
+}
+
+
+.formulario button[type="reset"]:hover {
+
+    background-color: rgb(100, 10, 10);
+
+    border: 0.1rem solid rgb(105, 5, 5);
+
+}
+
+
+.formulario button[type="reset"]:active {
+
+    background-color: rgb(150, 10, 10);
+
+    border: 0.1rem solid rgb(125, 5, 5);
+
+}
+
+
+.formulario button[type="submit"] {
+
+    background-color: rgb(1, 140, 10);
+
+    border: 0.1rem solid rgb(1, 115, 5);
+
+}
+
+
+.formulario button[type="submit"]:hover {
+
+    background-color: rgb(10, 100, 10);
+
+    border: 0.1rem solid rgb(10, 105, 5);
+
+}
+
+
+.formulario button[type="submit"]:active {
+
+    background-color: rgb(10, 150, 10);
+
+    border: 0.1rem solid rgb(10, 125, 5);
+
+}
+
+
+.formulario p {
+
+    text-align: justify;
+
+}
+
+
+#tabla {
+
+    border-collapse: collapse;
+
+    border: none;
+
+    margin: 0.25rem 0rem 1.25rem;
+
+}
+
+
+#tabla td {
+
+    padding: 0.25rem 0rem;
+
+}
+
+
+#tabla button[type="submit"],
+
+#tabla button[type="reset"] {
+
+    cursor: pointer;
+
+}
+
+
+.formulario h3,
+
+.formulario h1,
+
+#texto_breve {
+
+    padding-top: 0.5rem;
+
+    padding-bottom: 0.5rem;
+
+}
+
+
+#piedepagina {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-end;
+
+    width: 100%;
+
+    margin-top: 0.25rem;
+
+    padding: 0.5rem 1rem;
+
+    box-sizing: border-box;
+
+    flex-direction: row;
+
+}
+
+
+.formulario img[alt="Logo de la Asociación Civil Museo Trapiche de los Clavo"],
+
+#sadmus,
+
+#soporte {
+
+    user-select: none;
+
+}
+
+
+.formulario img[alt="Logo de la Asociación Civil Museo Trapiche de los Clavo"] {
+
+    width: 9.5rem;
+
+    height: 2.5rem;
+
+}
+
+
+#sadmus,
+
+#soporte {
+
+    text-align: center;
+
+    padding: 0;
+
+    color: rgb(121, 121, 121);
+
+}
+
+
+#sadmus {
+
+    font-weight: bold;
+
+}
+
+
+#soporte {
+
+    text-decoration: underline;
+
+    cursor: pointer;
+
+}
+
+
+#soporte:hover {
+
+    color: black;
+
+}
+
+
+#soporte:active {
+
+    color: rgb(40, 88, 83);
+
+}
+
+
+#tabla th {
+
+    text-align: left;
+
+    padding: 0.5rem 0rem 0rem;
+
+    justify-content: center;
+
+}
+
+
+#tabla th label img {
+
+    padding-left: 0rem;
+
+    padding-right: 0.5rem;
+
+    padding-bottom: 0.35rem;
+
+}
+
+
+#tabla th label {
+
+    display: flex;
+
+    flex-direction: row;
+
+    justify-content: flex-start;
+
+    align-items: center;
+
+}
+
+
+#tabla td button img,
+
+#tabla td button text {
+
+    padding-left: 0.25rem;
+
+}
+
+
+
+.soporte {
+
+    position: fixed;
+
+    top: 0;
+
+    left: 0;
+
+    right: 0;
+
+    bottom: 0;
+
+    background-color: #111111bd;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+
+    z-index: 1000;
+
+}
+
+
+.soporte--monday {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+
+}
+
+
+#contenedor_soporte {
+
+    padding: 1.5rem 2rem;
+
+    display: grid;
+
+    gap: 1rem;
+
+    width: 95%;
+
+    max-width: 1300px;
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    flex-direction: column;
+
+    background-color: white;
+
+    border: 0.25rem gray solid;
+
+    border-radius: 1rem;
+
+}
+
+
+#contenedor_soporte ul {
+
+    gap: 0.1rem;
+
+    display: grid;
+
+}
+
+
+#contenedor_soporte li {
+
+    list-style: none;
+
+} 

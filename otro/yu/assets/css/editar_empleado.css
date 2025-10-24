@@ -1,0 +1,93 @@
+h1, h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+}
+form {
+    max-width: 600px;
+    margin: 0px 5px 0px 300px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+     box-shadow: 0 2px 10px #0056b3;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="date"],
+form input[type="number"],
+form select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+form input:focus,
+form select:focus {
+    border-color: #000000;
+    box-shadow: 0 0 0 3px #00000040;
+    outline: none;
+}
+.campos-grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.campos-grid-container > div {
+    margin-bottom: 0;
+}
+
+.botones-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.botones-container .btn-regresar {
+    background-color: #6c757d;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    margin-right: 10px;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+    border: none;
+}
+
+.botones-container .btn-regresar:hover {
+    background-color: #5a6268;
+    text-decoration: none;
+}
+
+.botones-container button[type="submit"] {
+    background-color: #3533cd;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.botones-container button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+

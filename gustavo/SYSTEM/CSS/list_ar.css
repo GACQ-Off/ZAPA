@@ -1,0 +1,74 @@
+#cuerpo_formulario {
+    display: flex;
+}
+
+#cuerpo_formulario {
+    flex-direction: column;
+    height: fit-content;
+    gap: 1rem;
+    margin: 0 .5rem 0 0.5rem;
+}
+
+#cuerpo_formulario div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin: auto;
+}
+
+#nom_formulario {
+    width: 20rem; 
+}
+
+input {
+    margin-left: 0.75rem;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    height: fit-content;
+    border: transparent 0.15rem;
+    border-bottom: rgb(91, 91, 91) 0.15rem solid;
+    background-color: rgb(221, 221, 221);
+    color: #000;
+    transition: 0.3s;
+    padding-left: .5rem;
+    line-height: 1.5rem; 
+}
+
+input:hover {
+    border-bottom-color: #000;
+    transition: 0.3s;
+}
+
+input:focus {
+    border-bottom-color: rgb(58, 128, 121);
+    transition: 0.3s;
+    outline: none;
+}
+
+.imagen_contenedor {
+    margin: 0 auto;
+    display: flex;
+    border-radius: .2rem;
+    background-color: rgb(221, 221, 221);
+    justify-content: center;
+    overflow: hidden;
+    align-content: center;
+    border: 0.15rem rgb(170, 169, 169) solid;
+    min-width: 6rem;
+    min-height: 8rem;
+    max-width: 26rem;
+    max-height: 26rem;
+}
+
+#imagen_previa,
+#imagen_previa_m {
+    display: flex;
+    margin: auto;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+#primer_modal__contenedor,
+#modal_area_dinamica {
+    width: 36rem;
+}

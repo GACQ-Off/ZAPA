@@ -1,0 +1,83 @@
+/* LIMPIO */
+#contenedor_de_botones,
+.boton_bd,
+.primera_parte_bd,
+.bd_boton_negro {
+    display: flex;
+}
+
+#contenedor_de_botones,
+.boton_bd,
+.primera_parte_bd {
+    flex-direction: column;
+}
+
+#contenedor_de_botones,
+.bd_boton_negro {
+    flex-direction: row;
+}
+
+#contenedor_de_botones {
+    max-height: 400px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    border-radius: 1.25rem;
+    border: 0.1rem solid transparent;
+    position: relative;
+    gap: 2rem;
+}
+
+.boton_bd {
+    height: 20rem;
+    width: 20rem;
+    background-color: #fff;
+    border: 0.15rem solid transparent;
+    padding: 1.5rem;
+    border-radius: 2rem;
+    justify-content: space-between;
+    transition: 0.3s;
+    user-select: none;
+}
+
+.primera_parte_bd {
+    gap: 1rem;
+}
+
+.bd_boton_negro {
+    background-color: #000;
+    height: 3rem;
+    width: 7rem;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 0.5rem;
+    border-radius: 0.5rem;
+    align-self: flex-end;
+    cursor: pointer;
+    transition: 0.1s;
+}
+
+.primera_parte_bd h3,
+.primera_parte_bd p {
+    color: #000;
+}
+
+.primera_parte_bd h3 {
+    font-size: 1.5rem;
+}
+
+.primera_parte_bd p {
+    font-size: 1.03rem;
+    text-align: justify;
+}
+
+.boton_bd:hover {
+    border: 0.15rem solid #000;
+}
+
+.bd_boton_negro:hover {
+    background-color: rgb(39, 39, 39);
+}
+
+.bd_boton_negro:active {
+    background-color: rgb(71, 71, 71);
+}
